@@ -1,0 +1,29 @@
+# Cockpit settings
+database:
+    server: mongodb://192.168.1.228:27017/colis
+    options:
+        db: colis
+    auth:
+        username: colis
+        password: colis@1234
+# monoplane settings
+monoplane:
+    id: slug                    # the field name for slugs, default: _id
+    i18n: en                    # default: cockpit i18n or en
+    pages: pages      # collection name for pages, default: pages
+    site:
+        site_name: My Site      # site name
+        description: for SEO    # fallback if no page description exists
+        logo:
+            _id: asset_id       # asset id or asset path
+            path: /img/logo.png # or a path relative to your base
+    lexy:                       # Monoplane extends the Lexy renderer
+        logo:                   # @logo('assets_id or path')
+            width: 200
+            height: 200
+            quality: 80
+        thumbnail:              # @thumbnail('assets_id or path')
+            width: 100
+            height: 100
+        image:                  # @image('assets_id or path')
+            width: 800
